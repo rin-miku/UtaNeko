@@ -1,0 +1,51 @@
+name: utaneko
+description: "UtaNeko — 日语歌汉字注音跨平台播放器"
+publish_to: 'none'
+version: 1.0.1+2
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  go_router: ^16.0.0
+  shared_preferences: ^2.5.3
+  dio: ^5.8.0+1
+  pointycastle: ^4.0.0
+  flutter_secure_storage: ^9.2.4
+  qr_flutter: ^4.1.0
+  just_audio: ^0.10.4
+  # Windows 桌面播放后端（just_audio 本身不含 Win 实现）
+  just_audio_media_kit: ^2.1.0
+  media_kit_libs_windows_audio: any
+  kuromoji: ^1.0.5
+  path_provider: ^2.1.6
+  file_picker: ^11.0.3
+  archive: ^4.3.0
+  path: ^1.9.1
+  sqlite3: ^3.5.2
+  zstd_dart: ^1.1.0
+  hotkey_manager: ^0.2.3
+  window_manager: ^0.5.2
+  tray_manager: 0.5.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon/icon-utaneko-1024.png
+    - assets/icon/app_icon.ico
+
+# 图标由 tool/generate_launcher_icons.py 从母本缩放生成。
+# 不要加 adaptive_icon_background：那会把透明区域铺成底色。
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/icon/icon-utaneko-1024.png
